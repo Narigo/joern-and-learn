@@ -5,6 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build.js",
     "update-db": "node scripts/update-db/update-db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
