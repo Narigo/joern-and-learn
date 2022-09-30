@@ -1,2 +1,4 @@
 build/
 .env
+node_modules/
+database/
