@@ -13,9 +13,18 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3.0.2
+      - name: Install all dependencies
+        run: |
+          npm install
+      - name: Update the database
+        run: |
+          npm run update-db
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_API_BASE: ${{ secrets.AIRTABLE_API_BASE }}
       - name: Update the page
         run: |
-          sh build.sh
+          npm run build
       - name: Deploy to GitHub pages branch
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
